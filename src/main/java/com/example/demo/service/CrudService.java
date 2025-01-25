@@ -20,4 +20,12 @@ public class CrudService {
 		return crudRepo.findAll();
 	}
 
+	public CrudEntity getbyid(Long id) {
+		return crudRepo.findById(id).orElse(null);
+	}
+
+	public void deletebyid(Long id) {
+		crudRepo.deleteById(id);
+	}
+
 }

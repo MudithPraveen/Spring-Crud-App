@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manage</h1>
+	<a href="/add"> Add</a>
+    <table border=1>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each = "item : ${items}">
+            <td th:text = ${item.id}></td>
+            <td th:text = ${item.name}></td>
+            <td th:text = ${item.address}></td>
+            <td>
+                <button><a th:href = "@{edit/{id}(id = ${item.id})}">Edit</a></button>
+                <button><a th:href = "@{delete/{id}(id = ${item.id})}" onclick = "return confirm ('Are you sure?')">Delete</a></button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

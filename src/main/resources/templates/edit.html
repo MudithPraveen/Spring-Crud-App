@@ -4,11 +4,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add</h1>
+    <h1>Update</h1>
     <form action="/add" method="post" th:object = ${item}>
+        <input type="hidden" name="id" th:field = *{id}>
         <input type="text" name="name" th:field = *{name}>
         <input type="text" name="address" th:field = *{address}>
-        <input type="submit" value="Add">
+        <input type="submit" value="Update">
     </form>
 </body>
 </html>
